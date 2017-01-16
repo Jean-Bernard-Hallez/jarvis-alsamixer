@@ -1,0 +1,5 @@
+*VIS*PARLE*PLUS*FORT*|*VIS*AUGMENTE*VOLUME*|*VIS*MONTE*VOLUME*==jv_pg_ct_volumealsamixerPlus
+*VIS*PARLE*MOINS*FORT*|*VIS*BAISSE*VOLUME*==jv_pg_ct_volumealsamixerMoins
+*VIS*VOLUME*100*|*VIS*VOLUME*CENT*==jv_pg_ct_volumealsamixer100
+*VIS*COUPE*LE*HAUT*PARLEUR*==jv_pg_ct_volumealsamixerMute
+*VIS*TU*ES*LA*==jv_pg_ct_volumealsamixerNormal
