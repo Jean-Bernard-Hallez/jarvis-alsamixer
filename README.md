@@ -10,8 +10,8 @@ For multi-language plugin:
 - optionally write the Description / Usage sections in several languages
 -->
 ## Description
-Permet de changer le réglage du volume Jarvis en fonction de certaines circonstances... quand on a des invités, le soir, la nuit etc...
-Permet de changer aussi le réglage du Micro de Jarvis afin d'ajuster et de confirmer les réglages de base.
+Permet de changer le réglage du volume ou du Micro de Jarvis en fonction de certaines circonstances et ou pour ajuster et confirmer les réglages de base... 
+quand on a des invités, le soir, la nuit etc...
 
 ## Languages
 

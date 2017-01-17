@@ -82,7 +82,7 @@ jv_pg_ct_volumealsamixerTestVariable
 
 	RegAlsaVolamixer=$(amixer set PCM $alsamixervol% | grep % | awk -F \[ '{print $2}' | awk -F \% '{print $1}')
 	alsamixervol=`echo "$alsamixervol - 5" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/"`
-        echo $alsamixervol > $jarvischeminAncien
+        echo $alsamixervol > $jarvischemin
 		if [[ "$alsamixervol" -le "0" ]]; then
 		alsamixervol=0
 		echo "Je suis déja à 0"
@@ -93,7 +93,7 @@ amixer -M set PCM $alsamixervol% > nul
 RegAlsaVolamixer1=$(amixer set PCM $alsamixervol% | grep % | awk -F \[ '{print $2}' | awk -F \% '{print $1}')
 	if [[ "$RegAlsaVolamixer" == "$RegAlsaVolamixer1" && "$RegAlsaVolamixer1" -gt "0" ]]; then
 	echo "$alsamixervol - 5" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/" > $jarvischemin
-	echo $alsamixervol > $jarvischeminAncien
+	echo $alsamixervol > $jarvischemin
 	jv_pg_ct_volumealsamixerMoins
 	return
 	fi
@@ -150,6 +150,7 @@ jv_pg_ct_volumealsamixerMicroMNON() {
 jv_pg_ct_volumealsamixerTestVariableMicro
 sudo rm $jarvischeminMicAncien
 alsamixerMic=$(cat $jarvischeminMic)
+RegAlsaVolamixerMic1=$(amixer set Headset $alsamixerMic% | grep % | awk -F \[ '{print $2}' | awk -F \% '{print $1}')
 say "Réglage du micro au paramètre d'avant soit à $alsamixerMic pourcents"
 }
 
@@ -158,6 +159,6 @@ jv_pg_ct_volumealsamixerTestVariableMicro
 alsamixerMic=$(cat $jarvischeminMicAncien)
 echo $(cat $jarvischeminMicAncien) > $jarvischeminMic
 sudo rm $jarvischeminMicAncien
-
+RegAlsaVolamixerMic1=$(amixer set Headset $alsamixerMic% | grep % | awk -F \[ '{print $2}' | awk -F \% '{print $1}')
 say "Je concerve donc le réglage du micro au paramètre de $RegAlsaVolamixerMic1 pourcents"
 }
