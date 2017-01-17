@@ -7,14 +7,14 @@ jv_pg_ct_volumealsamixerNormal () {
 jv_pg_ct_volumealsamixerTestVariable
 amixer -M set PCM unmute >> null
 RegAlsaVolamixer=$(amixer set PCM $alsamixervol% | grep % | awk -F \[ '{print $2}' | awk -F \% '{print $1}')
-say "Voilà j'ai remis mon volume comme avant à $RegAlsaVolamixer pourcent"
+say "Voilà j'ai remis mon volume comme avant à $RegAlsaVolamixer pourcents"
 }
 
 jv_pg_ct_volumealsamixer100 () {
 jv_pg_ct_volumealsamixerTestVariable
 amixer -M set PCM 100% > null
 echo "100" > $jarvischemin
-say "Voilà, mon volume est à cent pourcent"
+say "Voilà, mon volume est à cent pourcents"
 }
 
 jv_pg_ct_volumealsamixerTestVariable () {
@@ -60,7 +60,7 @@ jv_pg_ct_volumealsamixerTestVariable
 
 		if [[ "$alsamixervol" -ge "100" ]]; then
 		alsamixervol=100
-		say "Je suis déja à 100 Pourcent."
+		say "Je suis déja à 100 pourcents."
 		return
 		fi
 	               	
@@ -72,7 +72,7 @@ RegAlsaVolamixer1=$(amixer set PCM $alsamixervol% | grep % | awk -F \[ '{print $
 	jv_pg_ct_volumealsamixerPlus
 	return
 	fi
-say "Voilà j'augmente mon volume à $RegAlsaVolamixer1 Pourcent."
+say "Voilà j'augmente mon volume à $RegAlsaVolamixer1 pourcents."
 }
 
 
@@ -98,7 +98,7 @@ RegAlsaVolamixer1=$(amixer set PCM $alsamixervol% | grep % | awk -F \[ '{print $
 	return
 	fi
 
-say "Voilà je baisse mon volume à $RegAlsaVolamixer1 Pourcent."
+say "Voilà je baisse mon volume à $RegAlsaVolamixer1 pourcents."
 }
 
 jv_pg_ct_volumealsamixerMicroP () {
@@ -108,7 +108,7 @@ jv_pg_ct_volumealsamixerMicroP () {
 
 		if [[ "$alsamixerMic" -ge "100" ]]; then
 		alsamixerMic=100
-		say "Je suis déja à 100 Pourcent."
+		say "Je suis déja à 100 pourcents."
 		return
 		fi
 	               	
@@ -120,7 +120,7 @@ RegAlsaVolamixerMic1=$(amixer set Headset $alsamixerMic% | grep % | awk -F \[ '{
 	jv_pg_ct_volumealsamixerMicroP
 	return
 	fi
-say "Voilà j'augmente la sensibilité du micro à $RegAlsaVolamixerMic1 Pourcent."
+say "Voilà j'augmente la sensibilité du micro à $RegAlsaVolamixerMic1 pourcents."
 
 }
 
@@ -131,7 +131,7 @@ jv_pg_ct_volumealsamixerMicroM () {
 
 		if [[ "$alsamixerMic" -le "0" ]]; then
 		alsamixerMic=0
-		say "Je suis déja à 0 Pourcent."
+		say "Je suis déja à 0 pourcents."
 		return
 		fi
 	               	
@@ -143,14 +143,14 @@ RegAlsaVolamixerMic1=$(amixer set Headset $alsamixerMic% | grep % | awk -F \[ '{
 	jv_pg_ct_volumealsamixerMicroM
 	return
 	fi
-say "Voilà je baisse la sensibilité du micro à $RegAlsaVolamixerMic1 Pourcent."
+say "Voilà je baisse la sensibilité du micro à $RegAlsaVolamixerMic1 pourcents."
 }
 
 jv_pg_ct_volumealsamixerMicroMNON() {
 jv_pg_ct_volumealsamixerTestVariableMicro
 sudo rm $jarvischeminMicAncien
 alsamixerMic=$(cat $jarvischeminMic)
-say "Réglage du micro au paramètre d'avant soit à $alsamixerMic pourcent"
+say "Réglage du micro au paramètre d'avant soit à $alsamixerMic pourcents"
 }
 
 jv_pg_ct_volumealsamixerMicroMOUI() {
@@ -159,5 +159,5 @@ alsamixerMic=$(cat $jarvischeminMicAncien)
 echo $(cat $jarvischeminMicAncien) > $jarvischeminMic
 sudo rm $jarvischeminMicAncien
 
-say "Je concerve donc le réglage du micro au paramètre de $RegAlsaVolamixerMic1 pourcent"
+say "Je concerve donc le réglage du micro au paramètre de $RegAlsaVolamixerMic1 pourcents"
 }
