@@ -3,3 +3,12 @@
 *VIS*VOLUME*100*|*VIS*VOLUME*CENT*==jv_pg_ct_volumealsamixer100
 *VIS*COUPE*LE*HAUT*PARLEUR*==jv_pg_ct_volumealsamixerMute
 *VIS*TU*ES*LA*==jv_pg_ct_volumealsamixerNormal
+*VIS*BAISSE*MICRO*==jv_pg_ct_volumealsamixerTestVariableMicro; jv_pg_ct_volumealsamixerMicroM; commands="$(jv_get_commands)"; jv_handle_order "GOTOMICROTESTOK"; return
+*VIS*AUGMENTE*MICRO*==jv_pg_ct_volumealsamixerTestVariableMicro; jv_pg_ct_volumealsamixerMicroP; commands="$(jv_get_commands)"; jv_handle_order "GOTOMICROTESTOK"; return
+
+GOTOMICROTESTOK==say "Merci de me parler afin savoir si le micro est bien calibré, si ca ne marche pas d'ici 1 minutes je reprendrais mes réglages initiales"
+>*OUI*==jv_pg_ct_volumealsamixerMicroMOUI
+>*NON*==jv_pg_ct_volumealsamixerMicroMNON
+
+*ALSANUIT*==jv_pg_ct_volumealsamixerNUIT
+*ALSANJOUR*==jv_pg_ct_volumealsamixerJOUR
