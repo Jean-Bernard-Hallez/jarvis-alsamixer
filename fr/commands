@@ -6,7 +6,7 @@
 *VIS*BAISSE*MICRO*==jv_pg_ct_volumealsamixerTestVariableMicro; jv_pg_ct_volumealsamixerMicroM; commands="$(jv_get_commands)"; jv_handle_order "GOTOMICROTESTOK"; return
 *VIS*AUGMENTE*MICRO*==jv_pg_ct_volumealsamixerTestVariableMicro; jv_pg_ct_volumealsamixerMicroP; commands="$(jv_get_commands)"; jv_handle_order "GOTOMICROTESTOK"; return
 
-GOTOMICROTESTOK==say "Merci de me parler afin savoir si le micro est bien calibré, si ca ne marche pas d'ici 1 minutes je reprendrais mes réglages initiales"
+GOTOMICROTESTOK==say "Vous allez faire un test, si ça ne marche pas d'ici 1 minute reprenez la main en mode keybord et remontez la sensibilité du micro"; say "A présent dites, oui, afin de voir si ça fontionne"
 >*OUI*==jv_pg_ct_volumealsamixerMicroMOUI
 >*NON*==jv_pg_ct_volumealsamixerMicroMNON
 

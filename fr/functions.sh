@@ -1,18 +1,18 @@
 jv_pg_ct_volumealsamixerMute () {
 say "Ok prononce simplement Jarvisse ! tu es là ? pour reprendre une conversation avec moi."
-amixer -c $ALSAMIXERCARTEVOLUME -M set $ALSAMIXERNOMVOLUME mute >> null
+amixer -c $ALSAMIXERCARTEVOLUME -M set $ALSAMIXERNOMVOLUME mute 2> /dev/null
 }
 
 jv_pg_ct_volumealsamixerNormal () {
 jv_pg_ct_volumealsamixerTestVariable
-amixer -c $ALSAMIXERCARTEVOLUME -M set $ALSAMIXERNOMVOLUME unmute >> null
+amixer -c $ALSAMIXERCARTEVOLUME -M set $ALSAMIXERNOMVOLUME unmute 2> /dev/null
 RegAlsaVolamixer=$(amixer -c $ALSAMIXERCARTEVOLUME set $ALSAMIXERNOMVOLUME $alsamixervol% | grep % | awk -F \[ '{print $2}' | awk -F \% '{print $1}')
 say "Voilà j'ai remis mon volume comme avant à $RegAlsaVolamixer -c $ALSAMIXERCARTEVOLUME pourcents"
 }
 
 jv_pg_ct_volumealsamixer100 () {
 jv_pg_ct_volumealsamixerTestVariable
-amixer -c $ALSAMIXERCARTEVOLUME -M set $ALSAMIXERNOMVOLUME 100% > null
+amixer -c $ALSAMIXERCARTEVOLUME -M set $ALSAMIXERNOMVOLUME 100% 2> /dev/null
 echo "100" > $jarvischemin
 say "Voilà, mon volume est à cent pourcents"
 }
@@ -62,7 +62,7 @@ jv_pg_ct_volumealsamixerTestVariable
 		return
 		fi
 	               	
-amixer -c $ALSAMIXERCARTEVOLUME -M set $ALSAMIXERNOMVOLUME $alsamixervol% >> null
+amixer -c $ALSAMIXERCARTEVOLUME -M set $ALSAMIXERNOMVOLUME $alsamixervol% 2> /dev/null
 RegAlsaVolamixer1=$(amixer -c $ALSAMIXERCARTEVOLUME set $ALSAMIXERNOMVOLUME $alsamixervol% | grep % | awk -F \[ '{print $2}' | awk -F \% '{print $1}')
 	if [[ "$RegAlsaVolamixer" == "$RegAlsaVolamixer1" && "$RegAlsaVolamixer1" -lt "95" ]]; then
 	echo "$alsamixervol + 5" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/" > $jarvischemin
@@ -87,7 +87,7 @@ jv_pg_ct_volumealsamixerTestVariable
 		return
 		fi
 	               	
-amixer -c $ALSAMIXERCARTEVOLUME -M set $ALSAMIXERNOMVOLUME $alsamixervol% > nul
+amixer -c $ALSAMIXERCARTEVOLUME -M set $ALSAMIXERNOMVOLUME $alsamixervol% 2> /dev/null
 RegAlsaVolamixer1=$(amixer -c $ALSAMIXERCARTEVOLUME set $ALSAMIXERNOMVOLUME $alsamixervol% | grep % | awk -F \[ '{print $2}' | awk -F \% '{print $1}')
 	if [[ "$RegAlsaVolamixer" == "$RegAlsaVolamixer1" && "$RegAlsaVolamixer1" -gt "0" ]]; then
 	echo "$alsamixervol - 5" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/" > $jarvischemin
@@ -110,7 +110,7 @@ jv_pg_ct_volumealsamixerMicroP () {
 		return
 		fi
 	               	
-amixer -c $ALSAMIXERCARTEMICRO -M set $ALSAMIXERNOMMICRO $alsamixerMic% >> null
+amixer -c $ALSAMIXERCARTEMICRO -M set $ALSAMIXERNOMMICRO $alsamixerMic% 2> /dev/null
 RegAlsaVolamixerMic1=$(amixer -c $ALSAMIXERCARTEMICRO set $ALSAMIXERNOMMICRO $alsamixerMic% | grep % | awk -F \[ '{print $2}' | awk -F \% '{print $1}')
 	if [[ "$RegAlsaMicamixerMic" == "$RegAlsaVolamixerMic1" && "$RegAlsaVolamixerMic1" -lt "95" ]]; then
 	echo "$alsamixerMic + 5" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/" > $jarvischeminMicAncien
@@ -133,7 +133,7 @@ jv_pg_ct_volumealsamixerMicroM () {
 		return
 		fi
 	               	
-amixer -c $ALSAMIXERCARTEMICRO -M set $ALSAMIXERNOMMICRO $alsamixerMic% >> null
+amixer -c $ALSAMIXERCARTEMICRO -M set $ALSAMIXERNOMMICRO $alsamixerMic% 2> /dev/null
 RegAlsaVolamixerMic1=$(amixer -c $ALSAMIXERCARTEMICRO set $ALSAMIXERNOMMICRO $alsamixerMic% | grep % | awk -F \[ '{print $2}' | awk -F \% '{print $1}')
 	if [[ "$RegAlsaMicamixerMic" -le "$RegAlsaVolamixerMic1" && "$RegAlsaMicamixerMic1" -lt "95" ]]; then
 	echo "$alsamixerMic - 5" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/" > $jarvischeminMicAncien
@@ -164,19 +164,19 @@ say "Je concerve donc le réglage du micro au paramètre de $RegAlsaVolamixerMic
 
 jv_pg_ct_volumealsamixerMute () {
 say "Ok prononce simplement Jarvisse ! tu es là ? pour reprendre une conversation avec moi."
-amixer -c $ALSAMIXERCARTEOLUME -M set $ALSAMIXERNOMVOLUME mute >> null
+amixer -c $ALSAMIXERCARTEOLUME -M set $ALSAMIXERNOMVOLUME mute 2> /dev/null
 }
 
 jv_pg_ct_volumealsamixerNormal () {
 jv_pg_ct_volumealsamixerTestVariable
-amixer -c $ALSAMIXERCARTEVOLUME -M set $ALSAMIXERNOMVOLUME unmute >> null
+amixer -c $ALSAMIXERCARTEVOLUME -M set $ALSAMIXERNOMVOLUME unmute 2> /dev/null
 RegAlsaVolamixer=$(amixer -c $ALSAMIXERCARTEVOLUME set $ALSAMIXERNOMVOLUME $alsamixervol% | grep % | awk -F \[ '{print $2}' | awk -F \% '{print $1}')
 say "Voilà j'ai remis mon volume comme avant à $RegAlsaVolamixer -c $RegAlsaVolamixer pourcents"
 }
 
 jv_pg_ct_volumealsamixer100 () {
 jv_pg_ct_volumealsamixerTestVariable
-amixer -c $ALSAMIXERCARTEVOLUME -M set $ALSAMIXERNOMVOLUME 100% > null
+amixer -c $ALSAMIXERCARTEVOLUME -M set $ALSAMIXERNOMVOLUME 100% 2> /dev/null
 echo "100" > $jarvischemin
 say "Voilà, mon volume est à cent pourcents"
 }
@@ -228,7 +228,7 @@ jv_pg_ct_volumealsamixerTestVariable
 		return
 		fi
 	               	
-amixer -c $ALSAMIXERCARTEVOLUME -M set $ALSAMIXERNOMVOLUME $alsamixervol% >> null
+amixer -c $ALSAMIXERCARTEVOLUME -M set $ALSAMIXERNOMVOLUME $alsamixervol% 2> /dev/null
 RegAlsaVolamixer1=$(amixer -c $ALSAMIXERCARTEVOLUME set $ALSAMIXERNOMVOLUME $alsamixervol% | grep % | awk -F \[ '{print $2}' | awk -F \% '{print $1}')
 	if [[ "$RegAlsaVolamixer" == "$RegAlsaVolamixer1" && "$RegAlsaVolamixer1" -lt "95" ]]; then
 	echo "$alsamixervol + 5" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/" > $jarvischemin
@@ -253,7 +253,7 @@ jv_pg_ct_volumealsamixerTestVariable
 		return
 		fi
 	               	
-amixer -c $ALSAMIXERCARTEVOLUME -M set $ALSAMIXERNOMVOLUME $alsamixervol% > nul
+amixer -c $ALSAMIXERCARTEVOLUME -M set $ALSAMIXERNOMVOLUME $alsamixervol% 2> /dev/null
 RegAlsaVolamixer1=$(amixer -c $ALSAMIXERCARTEVOLUME set $ALSAMIXERNOMVOLUME $alsamixervol% | grep % | awk -F \[ '{print $2}' | awk -F \% '{print $1}')
 	if [[ "$RegAlsaVolamixer" == "$RegAlsaVolamixer1" && "$RegAlsaVolamixer1" -gt "0" ]]; then
 	echo "$alsamixervol - 5" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/" > $jarvischemin
@@ -276,7 +276,7 @@ jv_pg_ct_volumealsamixerMicroP () {
 		return
 		fi
 	               	
-amixer -c $ALSAMIXERCARTEMICRO -M set $ALSAMIXERNOMMICRO $alsamixerMic% >> null
+amixer -c $ALSAMIXERCARTEMICRO -M set $ALSAMIXERNOMMICRO $alsamixerMic% 2> /dev/null
 RegAlsaVolamixerMic1=$(amixer -c $ALSAMIXERCARTEMICRO set $ALSAMIXERNOMMICRO $alsamixerMic% | grep % | awk -F \[ '{print $2}' | awk -F \% '{print $1}')
 	if [[ "$RegAlsaMicamixerMic" == "$RegAlsaVolamixerMic1" && "$RegAlsaVolamixerMic1" -lt "95" ]]; then
 	echo "$alsamixerMic + 5" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/" > $jarvischeminMicAncien
@@ -299,7 +299,7 @@ jv_pg_ct_volumealsamixerMicroM () {
 		return
 		fi
 	               	
-amixer -c $ALSAMIXERCARTEMICRO -M set $ALSAMIXERNOMMICRO $alsamixerMic% >> null
+amixer -c $ALSAMIXERCARTEMICRO -M set $ALSAMIXERNOMMICRO $alsamixerMic% 2> /dev/null
 RegAlsaVolamixerMic1=$(amixer -c $ALSAMIXERCARTEMICRO set $ALSAMIXERNOMMICRO $alsamixerMic% | grep % | awk -F \[ '{print $2}' | awk -F \% '{print $1}')
 	if [[ "$RegAlsaMicamixerMic" -le "$RegAlsaVolamixerMic1" && "$RegAlsaMicamixerMic1" -lt "95" ]]; then
 	echo "$alsamixerMic - 5" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/" > $jarvischeminMicAncien

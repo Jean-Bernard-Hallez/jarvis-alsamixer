@@ -10,6 +10,9 @@ For multi-language plugin:
 - optionally write the Description / Usage sections in several languages
 -->
 ## Description
+Allez dans le menu "pluggins", "Matching Order" et mettre ce pluggin jarvis-alsamier en premier de la liste.
+
+09/02/17 correction d'un bug
 Permet de changer le réglage du volume et du micro Jarvis en fonction de certaines circonstances... quand on a des invités, le soir, la nuit etc... ou pour affiner le réglage de base.
 18/01/17 Bug = Réglage dans le config du nom de sa carte son et de son micro
 
@@ -30,7 +33,8 @@ Jarvis: Voilà j'ai remis mon volume comme avant à 71 pourcents
 
 Vous: Jarvis baisse le micro
 Jarvis: Voilà je baisse la sensibilité du micro à 86 Pourcent
-Jarvis: Merci de me parler afin savoir si le micro est bien calibré, si ca ne marche pas d'ici 1 minutes je reprendrais mes réglages initiales (il ne se passe rien pour l'instant au bout de 1 minute... en construction)
+Jarvis: Vous allez faire un test, si ça ne marche pas d'ici 1 minute reprenez la main en mode keybord et remontez la sensibilité du micro
+Jarvis: A présent dites, oui, afin de voir si ça fontionne
 Vous: oui
 Jarvis: Je concerve donc le réglage du micro au paramètre de 86 pourcent
 
