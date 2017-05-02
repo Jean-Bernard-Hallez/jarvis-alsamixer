@@ -12,6 +12,7 @@ For multi-language plugin:
 ## Description
 Allez dans le menu "pluggins", "Matching Order" et mettre ce pluggin jarvis-alsamier en premier de la liste.
 
+(02/05/17 Correction suite modif du "plugins_installed")
 09/02/17 correction d'un bug
 Permet de changer le réglage du volume et du micro Jarvis en fonction de certaines circonstances... quand on a des invités, le soir, la nuit etc... ou pour affiner le réglage de base.
 18/01/17 Bug = Réglage dans le config du nom de sa carte son et de son micro

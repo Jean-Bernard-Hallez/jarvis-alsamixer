@@ -18,7 +18,7 @@ say "Voilà, mon volume est à cent pourcents"
 }
 
 jv_pg_ct_volumealsamixerTestVariable () {
-jarvischemin=$jv_dir/plugins/jarvis-alsamixer/alsamixervol.txt
+jarvischemin=$jv_dir/plugins_installed/jarvis-alsamixer/alsamixervol.txt
 if [ -f "$jarvischemin" ]; then
 alsamixervol=$(cat $jarvischemin)
 return
@@ -30,8 +30,8 @@ fi
 }
 
 jv_pg_ct_volumealsamixerTestVariableMicro () {
-jarvischeminMic=$jv_dir/plugins/jarvis-alsamixer/alsamixermicro.txt
-jarvischeminMicAncien=$jv_dir/plugins/jarvis-alsamixer/alsamixermicroOld.txt
+jarvischeminMic=$jv_dir/plugins_installed/jarvis-alsamixer/alsamixermicro.txt
+jarvischeminMicAncien=$jv_dir/plugins_installed/jarvis-alsamixer/alsamixermicroOld.txt
 
 if [ -f "$jarvischeminMic" ]; then
 alsamixerMic=$(cat $jarvischeminMic)
@@ -182,7 +182,7 @@ say "Voilà, mon volume est à cent pourcents"
 }
 
 jv_pg_ct_volumealsamixerTestVariable () {
-jarvischemin=$jv_dir/plugins/jarvis-alsamixer/alsamixervol.txt
+jarvischemin=$jv_dir/plugins_installed/jarvis-alsamixer/alsamixervol.txt
 if [ -f "$jarvischemin" ]; then
 alsamixervol=$(cat $jarvischemin)
 return
@@ -194,8 +194,8 @@ fi
 }
 
 jv_pg_ct_volumealsamixerTestVariableMicro () {
-jarvischeminMic=$jv_dir/plugins/jarvis-alsamixer/alsamixermicro.txt
-jarvischeminMicAncien=$jv_dir/plugins/jarvis-alsamixer/alsamixermicroOld.txt
+jarvischeminMic=$jv_dir/plugins_installed/jarvis-alsamixer/alsamixermicro.txt
+jarvischeminMicAncien=$jv_dir/plugins_installed/jarvis-alsamixer/alsamixermicroOld.txt
 
 if [ -f "$jarvischeminMic" ]; then
 alsamixerMic=$(cat $jarvischeminMic)
